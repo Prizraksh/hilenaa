@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для Лены 🧶</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Comfortaa:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fff3e2;
+    --paper: #fffaf2;
+    --ink: #2b1a12;
+    --pink: #ff6f91;
+    --pink-soft: #ffc2d1;
+    --mustard: #ffc93c;
+    --tangerine: #ff9a3c;
+    --mint: #8fd6b4;
+    --sky: #8ecae6;
+    --lilac: #c9a7f0;
+    --brown-soft: #7a5442;
+    --line: 3px solid var(--ink);
+    --hard: 6px 6px 0 var(--ink);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Comfortaa', sans-serif;
+    color: var(--ink);
+    background-color: var(--cream);
+    /* мишки на фоне */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg transform='rotate(-12 40 42)'%3E%3Cg fill='%23d99a6c' opacity='.28'%3E%3Ccircle cx='24' cy='26' r='10'/%3E%3Ccircle cx='56' cy='26' r='10'/%3E%3Ccircle cx='40' cy='44' r='21'/%3E%3C/g%3E%3Cellipse cx='40' cy='51' rx='9' ry='7' fill='%23fff' opacity='.5'/%3E%3Cg fill='%232b1a12' opacity='.35'%3E%3Ccircle cx='33' cy='40' r='2.4'/%3E%3Ccircle cx='47' cy='40' r='2.4'/%3E%3Cellipse cx='40' cy='48' rx='3.5' ry='2.5'/%3E%3C/g%3E%3C/g%3E%3Cg transform='rotate(14 118 118)'%3E%3Cg fill='%23ff6f91' opacity='.22'%3E%3Ccircle cx='102' cy='102' r='10'/%3E%3Ccircle cx='134' cy='102' r='10'/%3E%3Ccircle cx='118' cy='120' r='21'/%3E%3C/g%3E%3Cg fill='%232b1a12' opacity='.3'%3E%3Cpath d='M106 115 l6 4 l-6 4' stroke='%232b1a12' stroke-width='2' fill='none'/%3E%3Cpath d='M130 115 l-6 4 l6 4' stroke='%232b1a12' stroke-width='2' fill='none'/%3E%3Cellipse cx='118' cy='125' rx='3.5' ry='2.5'/%3E%3C/g%3E%3C/g%3E%3Ctext x='112' y='44' font-size='16' opacity='.35'%3E%E2%9C%A6%3C/text%3E%3Ctext x='22' y='130' font-size='14' opacity='.3'%3E%E2%9D%A4%3C/text%3E%3C/svg%3E");
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  .mono { font-family: 'Rubik Mono One', sans-serif; }
+  .hand { font-family: 'Caveat', cursive; }
+
+  #floaters { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .floater { position: absolute; bottom: -70px; opacity: .7; animation: floatUp linear forwards; }
+  @keyframes floatUp { to { transform: translateY(-120vh) rotate(360deg); } }
+
+  /* ---------- бегущая строка ---------- */
+  .ticker { position: relative; z-index: 3; background: var(--ink); color: var(--mustard); overflow: hidden; white-space: nowrap; border-bottom: var(--line); transform: rotate(-1.2deg); margin: 0 -20px; }
+  .ticker.alt { background: var(--pink); color: #fff; transform: rotate(1.2deg); }
+  .ticker-track { display: inline-block; padding: 12px 0; font-family: 'Rubik Mono One', sans-serif; font-size: 18px; animation: ticker 28s linear infinite; }
+  .ticker.alt .ticker-track { animation-direction: reverse; }
+  @keyframes ticker { to { transform: translateX(-50%); } }
+
+  section { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 80px 20px; }
+  .section-title {
+    font-family: 'Rubik Mono One', sans-serif; font-size: clamp(26px, 5vw, 46px); text-align: center; line-height: 1.15;
+    color: var(--paper); -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill;
+    text-shadow: 4px 4px 0 var(--ink); margin-bottom: 14px;
+  }
+  .section-title .hl { color: var(--pink); }
+  .section-sub { text-align: center; margin: 0 auto 44px; font-weight: 700; display: table; background: var(--mustard); border: var(--line); padding: 6px 16px; border-radius: 30px; transform: rotate(-1deg); }
+
+  .btn {
+    font-family: 'Rubik Mono One', sans-serif; font-size: 16px; cursor: pointer;
+    border: var(--line); background: var(--mustard); color: var(--ink);
+    padding: 16px 30px; border-radius: 16px; box-shadow: var(--hard);
+    transition: transform .12s, box-shadow .12s;
+  }
+  .btn:hover { transform: translate(-2px, -2px) rotate(-1.5deg); box-shadow: 8px 8px 0 var(--ink); }
+  .btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--ink); }
+  .btn.pink { background: var(--pink); color: #fff; }
+
+  /* ---------- шапка ---------- */
+  .hero { text-align: center; min-height: 92vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 40px; }
+  .hero .hello { font-family: 'Rubik Mono One', sans-serif; font-size: 15px; background: var(--ink); color: var(--paper); padding: 8px 18px; border-radius: 30px; transform: rotate(2deg); }
+  .hero h1 {
+    font-family: 'Rubik Mono One', sans-serif; font-size: clamp(76px, 17vw, 190px); line-height: 1; margin: 18px 0 6px;
+    color: var(--pink); -webkit-text-stroke: 4px var(--ink); paint-order: stroke fill; text-shadow: 8px 8px 0 var(--ink);
+  }
+  .hero h1 .letter { display: inline-block; animation: jelly 2.4s ease-in-out infinite; }
+  .hero h1 .letter:nth-child(2) { animation-delay: .15s; color: var(--mustard); }
+  .hero h1 .letter:nth-child(3) { animation-delay: .3s; color: var(--mint); }
+  .hero h1 .letter:nth-child(4) { animation-delay: .45s; color: var(--sky); }
+  @keyframes jelly { 0%, 100% { transform: translateY(0) rotate(0); } 25% { transform: translateY(-16px) rotate(-6deg); } 50% { transform: translateY(0) rotate(4deg) scaleY(.92); } }
+  .hero .tagline { font-family: 'Caveat', cursive; font-size: clamp(30px, 5vw, 44px); color: var(--brown-soft); transform: rotate(-2deg); }
+  .hero p.lead { max-width: 560px; margin: 18px auto 30px; font-size: 17px; background: var(--paper); border: var(--line); border-radius: 18px; padding: 16px 20px; box-shadow: var(--hard); }
+  .hero-wrap { position: relative; }
+  .sticker {
+    position: absolute; font-family: 'Rubik Mono One', sans-serif; font-size: 12px; line-height: 1.2; text-align: center;
+    border: var(--line); box-shadow: 4px 4px 0 var(--ink); padding: 10px 12px; border-radius: 14px; animation: stickerFloat 4s ease-in-out infinite;
+  }
+  .sticker.s1 { top: -20px; left: -60px; background: var(--mint); transform: rotate(-14deg); }
+  .sticker.s2 { top: 0; right: -90px; background: var(--tangerine); transform: rotate(12deg); animation-delay: 1s; }
+  .sticker.s2 small { font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 9px; }
+  .sticker .fire { display: inline-block; font-size: 30px; animation: flicker 1.2s ease-in-out infinite; }
+  @keyframes flicker { 0%, 100% { transform: scale(1) rotate(-4deg); } 30% { transform: scale(1.18) rotate(5deg); } 60% { transform: scale(.94) rotate(-2deg); } }
+  .sticker.s3 { bottom: -10px; left: -40px; font-size: 11px; background: var(--tangerine); transform: rotate(8deg); animation-delay: 2s; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; }
+  @keyframes stickerFloat { 50% { margin-top: -10px; } }
+  .scroll-hint { margin-top: 40px; font-size: 30px; animation: jelly 1.6s infinite; }
+
+  /* ---------- карточки ---------- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+  .card {
+    background: var(--paper); border: var(--line); border-radius: 22px; padding: 28px 24px; text-align: center;
+    box-shadow: var(--hard); transition: transform .2s; position: relative;
+  }
+  .card:nth-child(1) { transform: rotate(-2deg); background: var(--pink-soft); }
+  .card:nth-child(2) { transform: rotate(1.5deg); background: #d7f2e4; }
+  .card:nth-child(3) { transform: rotate(-1deg); background: #d6ecf6; }
+  .card:hover { transform: rotate(0) scale(1.04); }
+  .card .emoji { font-size: 58px; display: block; margin-bottom: 8px; }
+  .card h3 { font-family: 'Rubik Mono One', sans-serif; font-size: 16px; margin-bottom: 10px; }
+  .card .tape { position: absolute; top: -14px; left: 50%; width: 90px; height: 26px; margin-left: -45px; background: rgba(255, 201, 60, .85); border: 2px solid var(--ink); transform: rotate(-4deg); }
+
+  /* ---------- сцена Южного парка ---------- */
+  .scene {
+    position: relative; height: 360px; border-radius: 28px; overflow: hidden; border: 4px solid var(--ink); box-shadow: 10px 10px 0 var(--ink);
+    background: linear-gradient(#8ecae6 0%, #d8eef6 60%, #ffffff 60%, #f1f5fa 100%);
+  }
+  .mountain { position: absolute; bottom: 38%; width: 0; height: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 150px solid #7f9fb3; }
+  .mountain::after { content: ''; position: absolute; left: -45px; top: 0; border-left: 45px solid transparent; border-right: 45px solid transparent; border-bottom: 42px solid #fff; }
+  .m1 { left: -40px; } .m2 { left: 220px; border-bottom-width: 190px; border-left-width: 190px; border-right-width: 190px; } .m3 { right: -60px; }
+  .m2::after { left: -55px; border-left-width: 55px; border-right-width: 55px; border-bottom-width: 52px; }
+  .snow { position: absolute; top: -10px; color: #fff; font-size: 14px; animation: snow linear infinite; text-shadow: 0 0 3px #7f9fb3; }
+  @keyframes snow { to { transform: translateY(380px) translateX(30px); } }
+  .sign {
+    position: absolute; left: 50%; top: 20px; transform: translateX(-50%) rotate(-2deg);
+    background: #fff; border: var(--line); box-shadow: 4px 4px 0 var(--ink); border-radius: 8px; padding: 6px 16px;
+    font-family: 'Rubik Mono One', sans-serif; font-size: 16px; white-space: nowrap; z-index: 3;
+  }
+  .char { position: absolute; bottom: 18px; width: 130px; cursor: pointer; z-index: 2; }
+  .char svg { width: 100%; height: auto; display: block; }
+  #cartman { animation: walkCartman 12s linear infinite; }
+  #kenny { animation: walkKenny 12s linear infinite; }
+  #sceneGnome { width: 70px; animation: gnomeChase 12s linear infinite; z-index: 1; }
+  .char .bodywrap { animation: waddle .5s ease-in-out infinite alternate; transform-origin: bottom center; }
+  #kenny .bodywrap { animation-duration: .4s; }
+  #sceneGnome .bodywrap { animation-duration: .18s; }
+  @keyframes waddle { from { transform: rotate(-4deg) translateY(0); } to { transform: rotate(4deg) translateY(-6px); } }
+  @keyframes walkCartman { 0% { left: -150px; } 45% { left: 40%; } 55% { left: 40%; } 100% { left: 110%; } }
+  @keyframes walkKenny { 0% { left: -320px; } 45% { left: calc(40% - 150px); } 55% { left: calc(40% - 150px); } 100% { left: calc(110% - 150px); } }
+  @keyframes gnomeChase { 0%, 50% { left: -120px; } 100% { left: calc(110% + 200px); } }
+  .scene.paused .char, .scene.paused .bodywrap { animation-play-state: paused; }
+  .bubble {
+    position: absolute; bottom: 150px; left: 50%; transform: translateX(-50%) scale(0);
+    background: #fff; border: var(--line); box-shadow: 4px 4px 0 var(--ink); border-radius: 18px; padding: 8px 12px;
+    font-size: 14px; font-weight: 700; width: 180px; text-align: center; transition: transform .25s cubic-bezier(.3,1.8,.5,1);
+  }
+  #sceneGnome .bubble { bottom: 90px; width: 150px; }
+  .bubble::after { content: ''; position: absolute; bottom: -12px; left: 50%; margin-left: -8px; border: 8px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
+  .bubble.show { transform: translateX(-50%) scale(1); }
+  .scene-hint { text-align: center; margin-top: 22px; font-weight: 700; }
+
+  /* ---------- Полотенчик ---------- */
+  .towel-zone {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center;
+    background: #e8f1f8; border: var(--line); border-radius: 28px; box-shadow: 10px 10px 0 var(--ink); padding: 30px;
+    background-image: radial-gradient(#cfdeea 2px, transparent 2px); background-size: 20px 20px; overflow: hidden;
+  }
+  .towel-wrap { cursor: pointer; display: flex; justify-content: center; }
+  .towel-svg { width: 100%; max-width: 300px; height: auto; overflow: visible; }
+  .towel-body { transform-box: fill-box; transform-origin: 50% 100%; animation: towelSway 4.5s ease-in-out infinite; }
+  @keyframes towelSway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg) translateY(-3px); } }
+  .towel-wave { transform-box: view-box; transform-origin: 70px 196px; animation: towelWave 1.8s ease-in-out infinite; }
+  @keyframes towelWave { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(14deg); } }
+  .towel-svg .lid { transform-box: fill-box; transform-origin: 50% 0; animation: lazyBlink 5s ease-in-out infinite; }
+  @keyframes lazyBlink { 0%, 86%, 100% { transform: scaleY(1); } 91% { transform: scaleY(1.9); } }
+  .towelie-high .towel-svg .lid { animation: none; transform: scaleY(1.22); transition: transform .4s; }
+  .ember { animation: ember 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes ember { 0%, 100% { opacity: .85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.35); } }
+  .wisp { stroke: #98a6b3; stroke-width: 6; stroke-dasharray: 34 140; opacity: 0; animation: wisp 3.6s linear infinite; }
+  .wisp.w2 { animation-delay: 1.2s; stroke-width: 4; }
+  .wisp.w3 { animation-delay: 2.4s; stroke-width: 7; stroke: #b3bec8; }
+  @keyframes wisp { 0% { stroke-dashoffset: 0; opacity: 0; } 15% { opacity: .9; } 100% { stroke-dashoffset: -150; opacity: 0; } }
+
+  .smoke-cloud { position: relative; transform: scale(.2); opacity: 0; transition: transform .6s cubic-bezier(.3,1.6,.5,1), opacity .4s; }
+  .smoke-cloud.show { transform: scale(1); opacity: 1; }
+  .cloud-body {
+    position: relative; background: #f6f7f8; border: var(--line); box-shadow: 6px 6px 0 var(--ink);
+    border-radius: 60px 80px 70px 90px / 70px 60px 80px 60px; padding: 34px 30px; text-align: center;
+  }
+  .cloud-body::before, .cloud-body::after { content: ''; position: absolute; background: #f6f7f8; border: var(--line); border-radius: 50%; }
+  .cloud-body::before { width: 30px; height: 30px; left: -30px; bottom: 30px; }
+  .cloud-body::after { width: 16px; height: 16px; left: -56px; bottom: 14px; }
+  .cl { font-weight: 700; font-size: 18px; opacity: 0; transform: translateY(8px); transition: all .5s; }
+  .cl + .cl { margin-top: 12px; }
+  .l1 { font-family: 'Rubik Mono One', sans-serif; font-size: 15px; line-height: 1.5; }
+  .l2 { font-family: 'Caveat', cursive; font-size: 30px; color: var(--brown-soft); }
+  .l3 { background: var(--sky); border: 2px solid var(--ink); border-radius: 14px; padding: 6px 12px; display: inline-block; }
+  .cl.on { opacity: 1; transform: none; }
+  .puff {
+    position: fixed; z-index: 45; pointer-events: none; border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(255,255,255,.95), rgba(200,208,216,.75) 60%, rgba(200,208,216,0) 72%);
+    animation: puff 2.4s ease-out forwards;
+  }
+  @keyframes puff { 0% { transform: translate(0,0) scale(.3); opacity: .95; } 100% { transform: translate(var(--dx), -170px) scale(2.6); opacity: 0; } }
+
+  /* ---------- гномы ---------- */
+  .gnome-plan { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px; align-items: stretch; }
+  .phase {
+    background: var(--paper); border: var(--line); box-shadow: var(--hard); border-radius: 20px; padding: 24px 20px; text-align: center;
+    position: relative; cursor: pointer; transition: transform .2s;
+  }
+  .phase:hover { transform: translateY(-4px) rotate(-1deg); }
+  .phase .num { font-family: 'Rubik Mono One', sans-serif; font-size: 14px; background: var(--ink); color: var(--paper); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+  .phase .big { font-size: 60px; display: block; }
+  .phase .txt { font-family: 'Rubik Mono One', sans-serif; font-size: 18px; margin-top: 8px; }
+  .phase .secret { font-size: 15px; font-weight: 700; margin-top: 10px; color: var(--pink); min-height: 24px; }
+  .phase:nth-child(1) { background: #ffe1b8; }
+  .phase:nth-child(2) { background: var(--pink-soft); }
+  .phase:nth-child(3) { background: #d7f2e4; }
+  .gnome-row { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin-top: 46px; }
+  .counter-box { background: var(--ink); color: var(--paper); border-radius: 20px; padding: 18px 26px; text-align: center; box-shadow: 6px 6px 0 var(--pink); }
+  .counter-box b { display: block; font-family: 'Rubik Mono One', sans-serif; font-size: 42px; color: var(--mustard); }
+  .shake { animation: shake .5s; }
+  @keyframes shake { 20%, 60% { transform: translateX(-8px) rotate(-2deg); } 40%, 80% { transform: translateX(8px) rotate(2deg); } }
+  #pantsMsg { font-weight: 700; min-height: 26px; text-align: center; margin-top: 18px; font-size: 18px; }
+
+  /* гном-воришка, бегающий по странице */
+  #thief { position: fixed; bottom: 6px; left: -120px; width: 80px; z-index: 40; cursor: pointer; display: none; }
+  #thief.run { display: block; animation: thiefRun 9s linear forwards; }
+  #thief .bodywrap { animation: waddle .18s ease-in-out infinite alternate; transform-origin: bottom center; }
+  @keyframes thiefRun { to { left: calc(100vw + 120px); } }
+  #thief.caught { animation: caught .7s forwards !important; }
+  @keyframes caught { to { transform: translateY(-200px) rotate(720deg) scale(0); } }
+  .toast {
+    position: fixed; left: 50%; bottom: 110px; transform: translateX(-50%) scale(0); z-index: 60;
+    background: var(--mustard); border: var(--line); box-shadow: var(--hard); border-radius: 16px; padding: 12px 20px;
+    font-weight: 700; transition: transform .25s cubic-bezier(.3,1.8,.5,1); text-align: center; max-width: 90vw;
+  }
+  .toast.show { transform: translateX(-50%) scale(1); }
+
+  /* ---------- открытки ---------- */
+  .wishes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 26px; }
+  .flip { perspective: 900px; height: 200px; cursor: pointer; }
+  .flip:nth-child(odd) { transform: rotate(-1.5deg); }
+  .flip:nth-child(even) { transform: rotate(1.5deg); }
+  .flip-inner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.4,1.6,.5,1); transform-style: preserve-3d; }
+  .flip.open .flip-inner { transform: rotateY(180deg); }
+  .face {
+    position: absolute; inset: 0; backface-visibility: hidden; border-radius: 20px; border: var(--line); box-shadow: var(--hard);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px; text-align: center;
+  }
+  .front { background: var(--pink); font-size: 56px; }
+  .front small { font-family: 'Rubik Mono One', sans-serif; font-size: 11px; margin-top: 6px; background: var(--paper); border: 2px solid var(--ink); padding: 3px 10px; border-radius: 20px; }
+  .back { background: var(--paper); transform: rotateY(180deg); font-size: 16px; font-weight: 700; }
+  .flip:nth-child(2) .front { background: var(--mint); }
+  .flip:nth-child(3) .front { background: var(--mustard); }
+  .flip:nth-child(4) .front { background: var(--sky); }
+  .flip:nth-child(5) .front { background: var(--tangerine); }
+  .flip:nth-child(6) .front { background: var(--lilac); }
+
+  /* ---------- конструктор мишки ---------- */
+  .toy-maker { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; background: var(--paper); border: var(--line); border-radius: 28px; padding: 30px; box-shadow: 10px 10px 0 var(--ink); }
+  .toy-stage { display: flex; justify-content: center; background: var(--pink-soft); border: var(--line); border-radius: 22px; padding: 20px; background-image: radial-gradient(var(--paper) 2px, transparent 2px); background-size: 18px 18px; }
+  .toy-stage svg { width: 240px; height: 240px; transition: transform .3s; filter: drop-shadow(4px 4px 0 rgba(43,26,18,.35)); }
+  .toy-stage svg:hover { transform: rotate(-6deg) scale(1.05); }
+  .controls h3 { margin: 14px 0 8px; font-family: 'Rubik Mono One', sans-serif; font-size: 13px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+  .swatch { width: 40px; height: 40px; border-radius: 50%; border: var(--line); box-shadow: 3px 3px 0 var(--ink); cursor: pointer; transition: transform .15s; }
+  .swatch:hover { transform: scale(1.12) rotate(10deg); }
+  .opt { font-family: inherit; font-weight: 700; padding: 7px 14px; border-radius: 12px; border: 2px solid var(--ink); background: #fff; cursor: pointer; font-size: 14px; color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+  .opt.active { background: var(--pink); color: #fff; }
+  #toyName { margin-top: 16px; font-family: 'Caveat', cursive; font-size: 34px; color: var(--pink); min-height: 44px; }
+
+  /* ---------- игра ---------- */
+  .game-wrap { background: var(--paper); border: var(--line); border-radius: 28px; padding: 24px; box-shadow: 10px 10px 0 var(--ink); text-align: center; }
+  .hud { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .hud span { font-weight: 700; background: var(--mustard); border: 2px solid var(--ink); border-radius: 12px; padding: 6px 12px; box-shadow: 3px 3px 0 var(--ink); }
+  .hud span:nth-child(2) { background: var(--pink-soft); }
+  .hud span:nth-child(3) { background: #d6ecf6; }
+  .hud span:nth-child(4) { background: #d7f2e4; }
+  .legend { font-size: 14px; margin-bottom: 14px; font-weight: 700; }
+  canvas#game { width: 100%; max-width: 720px; aspect-ratio: 720 / 440; border-radius: 20px; touch-action: none; display: block; margin: 0 auto; border: var(--line); }
+  .game-msg { margin-top: 16px; min-height: 28px; font-weight: 700; color: var(--pink); font-size: 18px; }
+
+  /* ---------- подарок ---------- */
+  .gift-area { text-align: center; }
+  .gift { display: inline-block; cursor: pointer; position: relative; width: 170px; height: 170px; margin: 20px auto; animation: wiggle 2.5s ease-in-out infinite; }
+  .gift .box { position: absolute; bottom: 0; left: 10px; width: 150px; height: 110px; background: var(--pink); border: var(--line); border-radius: 10px; box-shadow: var(--hard); }
+  .gift .lid { position: absolute; top: 30px; left: 0; width: 170px; height: 40px; background: var(--pink); border: var(--line); border-radius: 10px; transition: transform .7s cubic-bezier(.3,1.6,.5,1); z-index: 2; }
+  .gift .ribbon-v { position: absolute; left: 75px; bottom: 3px; width: 20px; height: 137px; background: var(--mustard); border-left: var(--line); border-right: var(--line); z-index: 3; transition: opacity .3s; }
+  .gift .bow { position: absolute; top: 2px; left: 58px; font-size: 44px; z-index: 4; transition: transform .7s; }
+  .gift:hover .lid { transform: translateY(-6px) rotate(-3deg); }
+  .gift.opened { animation: none; }
+  .gift.opened .lid { transform: translateY(-120px) rotate(-30deg); }
+  .gift.opened .bow { transform: translateY(-140px) rotate(40deg); }
+  .gift.opened .ribbon-v { opacity: 0; }
+  @keyframes wiggle { 0%, 80%, 100% { transform: rotate(0); } 85% { transform: rotate(-6deg); } 90% { transform: rotate(6deg); } 95% { transform: rotate(-3deg); } }
+  .letter-card {
+    max-width: 620px; margin: 10px auto 0; background: var(--paper); border: var(--line); border-radius: 20px; box-shadow: 10px 10px 0 var(--ink);
+    font-family: 'Caveat', cursive; font-size: 28px; line-height: 1.35; text-align: left; padding: 0 30px;
+    background-image: repeating-linear-gradient(transparent 0 37px, rgba(255,111,145,.3) 37px 38px);
+    max-height: 0; opacity: 0; overflow: hidden; transition: all 1s ease;
+  }
+  .letter-card.show { max-height: 900px; opacity: 1; padding: 34px 30px; }
+  .letter-card .ps { font-size: 22px; color: var(--brown-soft); }
+
+  footer { text-align: center; padding: 40px 20px 70px; position: relative; z-index: 1; font-weight: 700; }
+
+  .confetti { position: fixed; top: -20px; width: 10px; height: 14px; z-index: 50; pointer-events: none; border-radius: 3px; border: 1.5px solid var(--ink); animation: fall linear forwards; }
+  @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+
+  .reveal { opacity: 0; transform: translateY(40px); transition: all .8s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 720px) {
+    .toy-maker, .towel-zone { grid-template-columns: 1fr; }
+    .towel-zone { padding: 20px; }
+    .cloud-body::before { left: 50%; top: -30px; bottom: auto; }
+    .cloud-body::after { left: 46%; top: -54px; bottom: auto; }
+    .smoke-cloud { order: -1; margin-bottom: 40px; }
+    .char { width: 100px; }
+    #sceneGnome { width: 56px; }
+    .scene { height: 320px; }
+    .bubble { bottom: 120px; width: 140px; font-size: 12px; }
+    .sticker { display: none; }
+    .ticker-track { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="floaters"></div>
+
+<div class="ticker"><div class="ticker-track" id="ticker1"></div></div>
+
+<!-- ============ ШАПКА ============ -->
+<section class="hero">
+  <div class="hello">★ С ПРАЗДНИКОМ ★</div>
+  <div class="hero-wrap">
+    <div class="sticker s1">100%<br>ручная<br>работа</div>
+    <div class="sticker s2"><span class="fire">🔥</span><br>наш огонёк<br>вечен*<br><small>*даже если<br>сбросился</small></div>
+    <h1><span class="letter">Л</span><span class="letter">Е</span><span class="letter">Н</span><span class="letter">А</span></h1>
+    <div class="sticker s3">ТРУСЫ<br>НА МЕСТЕ?</div>
+  </div>
+  <div class="tagline">главная мастерица на районе</div>
+  <p class="lead">Этот сайт сшит специально для тебя — из ярких лоскутков, плюшевых мишек и щепотки хаоса из Южного парка. Осторожно: где-то тут бегают гномы 🧙‍♂️🩲</p>
+  <button class="btn pink" id="confettiBtn">🎉 ЖМИ!</button>
+  <div class="scroll-hint">👇</div>
+</section>
+
+<!-- ============ ПРО ЛЕНУ ============ -->
+<section class="reveal">
+  <h2 class="section-title">Досье на <span class="hl">Лену</span></h2>
+  <p class="section-sub">совершенно секретно 🕵️ (но мы всё знаем)</p>
+  <div class="cards">
+    <div class="card"><div class="tape"></div>
+      <span class="emoji">🧵</span>
+      <h3>Королева шитья</h3>
+      <p>Иголка и нитки в её руках превращаются в магию. Швейная машинка трепещет от уважения.</p>
+    </div>
+    <div class="card"><div class="tape"></div>
+      <span class="emoji">🧸</span>
+      <h3>Мама игрушек</h3>
+      <p>Каждая игрушка — с характером, душой и плюшевым пузиком. Армия мишек растёт.</p>
+    </div>
+    <div class="card"><div class="tape"></div>
+      <span class="emoji">🏔️</span>
+      <h3>Житель Южного парка</h3>
+      <p>Чувство юмора — уровень «знает всё про гномов и трусы». Это опасно и прекрасно.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ticker alt"><div class="ticker-track" id="ticker2"></div></div>
+
+<!-- ============ ЮЖНЫЙ ПАРК ============ -->
+<section class="reveal">
+  <h2 class="section-title">Гости из <span class="hl">Южного парка</span></h2>
+  <p class="section-sub">пришли поздравить. ну, почти все с добрыми намерениями</p>
+  <div class="scene" id="scene">
+    <div class="mountain m1"></div>
+    <div class="mountain m2"></div>
+    <div class="mountain m3"></div>
+    <div class="sign">HAPPY DAY, ЛЕНА!</div>
+
+    <div class="char" id="kenny">
+      <div class="bubble" id="kennyBubble">Мммф-мфф-мммф! <br>(С праздником!)</div>
+      <div class="bodywrap">
+        <svg viewBox="0 0 120 130">
+          <rect x="34" y="112" width="22" height="12" rx="4" fill="#6b4226"/>
+          <rect x="64" y="112" width="22" height="12" rx="4" fill="#6b4226"/>
+          <ellipse cx="60" cy="95" rx="40" ry="24" fill="#f28c28"/>
+          <line x1="60" y1="78" x2="60" y2="118" stroke="#c96a12" stroke-width="2"/>
+          <ellipse cx="18" cy="96" rx="8" ry="12" fill="#f28c28"/>
+          <ellipse cx="102" cy="96" rx="8" ry="12" fill="#f28c28"/>
+          <circle cx="16" cy="108" r="6" fill="#6b4226"/>
+          <circle cx="104" cy="108" r="6" fill="#6b4226"/>
+          <circle cx="60" cy="48" r="44" fill="#f28c28"/>
+          <ellipse cx="60" cy="50" rx="28" ry="24" fill="#6b4226"/>
+          <ellipse cx="60" cy="48" rx="23" ry="19" fill="#fcd9b6"/>
+          <ellipse cx="51" cy="46" rx="9" ry="10" fill="#fff"/>
+          <ellipse cx="69" cy="46" rx="9" ry="10" fill="#fff"/>
+          <circle cx="53" cy="47" r="2.5" fill="#000"/>
+          <circle cx="67" cy="47" r="2.5" fill="#000"/>
+          <path d="M58 72 Q54 84 50 88" stroke="#6b4226" stroke-width="2.5" fill="none"/>
+          <path d="M62 72 Q66 84 70 88" stroke="#6b4226" stroke-width="2.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="char" id="cartman">
+      <div class="bubble" id="cartmanBubble">Лена, с праздником! Только торт чур мой! 🍰</div>
+      <div class="bodywrap">
+        <svg viewBox="0 0 140 135">
+          <rect x="40" y="118" width="24" height="12" rx="4" fill="#7a4a2a"/>
+          <rect x="76" y="118" width="24" height="12" rx="4" fill="#7a4a2a"/>
+          <ellipse cx="70" cy="95" rx="58" ry="30" fill="#e3342f"/>
+          <line x1="70" y1="72" x2="70" y2="124" stroke="#a31f1b" stroke-width="2"/>
+          <circle cx="66" cy="88" r="2" fill="#a31f1b"/><circle cx="66" cy="100" r="2" fill="#a31f1b"/>
+          <ellipse cx="12" cy="96" rx="9" ry="13" fill="#e3342f"/>
+          <ellipse cx="128" cy="96" rx="9" ry="13" fill="#e3342f"/>
+          <circle cx="10" cy="110" r="7" fill="#f2c94c"/>
+          <circle cx="130" cy="110" r="7" fill="#f2c94c"/>
+          <ellipse cx="70" cy="50" rx="46" ry="38" fill="#fcd9b6"/>
+          <path d="M24 46 Q26 8 70 8 Q114 8 116 46 Z" fill="#3fb6c5"/>
+          <rect x="22" y="38" width="96" height="12" rx="6" fill="#f2c94c"/>
+          <circle cx="70" cy="8" r="9" fill="#f2c94c"/>
+          <ellipse cx="60" cy="58" rx="9" ry="10" fill="#fff"/>
+          <ellipse cx="80" cy="58" rx="9" ry="10" fill="#fff"/>
+          <circle cx="62" cy="59" r="2.5" fill="#000"/>
+          <circle cx="78" cy="59" r="2.5" fill="#000"/>
+          <path d="M40 70 Q46 76 52 72" stroke="#d9a07a" stroke-width="2" fill="none"/>
+          <path d="M88 72 Q94 76 100 70" stroke="#d9a07a" stroke-width="2" fill="none"/>
+          <path d="M60 76 Q70 84 80 76" stroke="#000" stroke-width="2.5" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="char" id="sceneGnome">
+      <div class="bubble" id="sceneGnomeBubble">Фаза 1: трусы. Фаза 2: ???</div>
+      <div class="bodywrap"><svg viewBox="0 0 80 110" class="gnome-svg"></svg></div>
+    </div>
+  </div>
+  <p class="scene-hint">👆 Тыкай в Кенни, Картмана и… того мелкого, что за ними крадётся</p>
+</section>
+
+<!-- ============ ПОЛОТЕНЧИК ============ -->
+<section class="reveal" id="towelSection">
+  <h2 class="section-title">Полотенчик <span class="hl">одобряет</span></h2>
+  <p class="section-sub">он немного… расслаблен. нажми на него 👆</p>
+  <div class="towel-zone">
+    <div class="towel-wrap" id="towelie" title="Тыкни в Полотенчика">
+      <svg viewBox="0 0 340 400" class="towel-svg">
+        <defs>
+          <linearGradient id="towelGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a9a2e6"/>
+            <stop offset=".5" stop-color="#958dd8"/>
+            <stop offset="1" stop-color="#7c73c4"/>
+          </linearGradient>
+          <linearGradient id="flapGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#bdb7f0"/>
+            <stop offset="1" stop-color="#8a82d0"/>
+          </linearGradient>
+          <!-- махровая текстура: светлые и тёмные крапинки -->
+          <filter id="speckLight" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/>
+            <feColorMatrix values="0 0 0 0 .93  0 0 0 0 .92  0 0 0 0 1  4 0 0 0 -2.05"/>
+          </filter>
+          <filter id="speckDark" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="11"/>
+            <feColorMatrix values="0 0 0 0 .3  0 0 0 0 .26  0 0 0 0 .55  -4 0 0 0 1.75"/>
+          </filter>
+          <radialGradient id="eyeGrad" cx=".5" cy=".6" r=".6">
+            <stop offset="0" stop-color="#fde3dc"/>
+            <stop offset=".65" stop-color="#f6c4bb"/>
+            <stop offset="1" stop-color="#ec9f97"/>
+          </radialGradient>
+          <radialGradient id="emberGrad">
+            <stop offset="0" stop-color="#fff6a8"/>
+            <stop offset=".45" stop-color="#ff8a1e"/>
+            <stop offset="1" stop-color="#d12f12"/>
+          </radialGradient>
+          <linearGradient id="footGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe24a"/>
+            <stop offset="1" stop-color="#e8b800"/>
+          </linearGradient>
+          <clipPath id="towelClip">
+            <path d="M80 36 L232 30 Q250 30 252 48 L256 306 Q258 336 238 338 L176 340 L170 330 L164 340 L86 342 Q66 340 66 322 L68 54 Q68 38 80 36 Z"/>
+          </clipPath>
+          <clipPath id="flapClip">
+            <path d="M196 31 Q238 22 256 30 Q266 58 252 82 Q240 56 210 50 Z"/>
+          </clipPath>
+        </defs>
+
+        <ellipse cx="160" cy="384" rx="100" ry="11" fill="#2b1a12" opacity=".15"/>
+
+        <g class="towel-body">
+          <!-- жёлтые ножки -->
+          <path d="M104 334 Q100 372 112 378 Q124 380 124 360 L122 334 Z" fill="url(#footGrad)" stroke="#2b1a12" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M200 334 Q198 362 210 376 Q222 378 222 350 L220 334 Z" fill="url(#footGrad)" stroke="#2b1a12" stroke-width="3.5" stroke-linejoin="round"/>
+
+          <!-- тело-полотенце -->
+          <g clip-path="url(#towelClip)">
+            <rect x="60" y="20" width="210" height="330" fill="url(#towelGrad)"/>
+            <rect x="60" y="20" width="210" height="330" filter="url(#speckDark)" opacity=".75"/>
+            <rect x="60" y="20" width="210" height="330" filter="url(#speckLight)" opacity=".85"/>
+            <!-- белые полосы -->
+            <path d="M60 60 Q160 54 260 56" stroke="#f4f2ff" stroke-width="7" fill="none"/>
+            <path d="M60 76 Q160 71 260 72" stroke="#f4f2ff" stroke-width="3.5" fill="none"/>
+            <path d="M60 290 Q160 296 260 290" stroke="#f4f2ff" stroke-width="3.5" fill="none"/>
+            <path d="M60 306 Q160 312 260 306" stroke="#f4f2ff" stroke-width="7" fill="none"/>
+            <!-- объём: тень по краям -->
+            <rect x="60" y="20" width="22" height="330" fill="#3f3780" opacity=".12"/>
+            <rect x="238" y="20" width="22" height="330" fill="#3f3780" opacity=".18"/>
+          </g>
+          <path d="M80 36 L232 30 Q250 30 252 48 L256 306 Q258 336 238 338 L176 340 L170 330 L164 340 L86 342 Q66 340 66 322 L68 54 Q68 38 80 36 Z"
+                fill="none" stroke="#2b1a12" stroke-width="4" stroke-linejoin="round"/>
+
+          <!-- загнутый уголок -->
+          <g clip-path="url(#flapClip)">
+            <rect x="190" y="18" width="80" height="70" fill="url(#flapGrad)"/>
+            <rect x="190" y="18" width="80" height="70" filter="url(#speckLight)" opacity=".7"/>
+          </g>
+          <path d="M196 31 Q238 22 256 30 Q266 58 252 82 Q240 56 210 50 Z" fill="none" stroke="#2b1a12" stroke-width="3.5" stroke-linejoin="round"/>
+
+          <!-- брови -->
+          <path d="M100 122 Q118 112 140 120" stroke="#2b1a12" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M180 120 Q202 112 220 122" stroke="#2b1a12" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+          <!-- глаза -->
+          <g class="towel-eyes">
+            <ellipse cx="128" cy="158" rx="31" ry="30" fill="url(#eyeGrad)" stroke="#2b1a12" stroke-width="3"/>
+            <ellipse cx="192" cy="158" rx="31" ry="30" fill="url(#eyeGrad)" stroke="#2b1a12" stroke-width="3"/>
+            <g stroke="#d0212b" stroke-width="1.7" fill="none" stroke-linecap="round">
+              <path d="M98 160 q8 -3 12 2 q5 5 10 1 l4 -6"/>
+              <path d="M104 178 q6 -8 14 -5 l5 -4"/>
+              <path d="M116 186 q4 -6 10 -4"/>
+              <path d="M150 150 q-6 6 -2 12"/>
+              <path d="M140 182 q-2 -6 4 -10"/>
+              <path d="M222 160 q-8 -3 -12 2 q-5 5 -10 1 l-4 -6"/>
+              <path d="M216 178 q-6 -8 -14 -5 l-5 -4"/>
+              <path d="M204 186 q-4 -6 -10 -4"/>
+              <path d="M170 150 q6 6 2 12"/>
+              <path d="M180 182 q2 -6 -4 -10"/>
+            </g>
+            <circle cx="143" cy="168" r="5.5" fill="#111"/>
+            <circle cx="177" cy="168" r="5.5" fill="#111"/>
+            <circle cx="141.5" cy="166.5" r="1.6" fill="#fff"/>
+            <circle cx="175.5" cy="166.5" r="1.6" fill="#fff"/>
+            <!-- тяжёлые веки -->
+            <g class="lid">
+              <path d="M96 156 A32 31 0 0 1 160 156 Q128 164 96 156 Z" fill="#a39ce0" stroke="#2b1a12" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M160 156 A32 31 0 0 1 224 156 Q192 164 160 156 Z" fill="#a39ce0" stroke="#2b1a12" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M108 140 Q128 132 148 140" stroke="#cfcaf6" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>
+              <path d="M172 140 Q192 132 212 140" stroke="#cfcaf6" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>
+            </g>
+          </g>
+
+          <!-- улыбка -->
+          <path d="M144 210 Q160 226 178 208 Q160 214 144 210 Z" fill="#2b1a12" stroke="#2b1a12" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M152 212 L154 218 L160 216 L160 212.5 Z" fill="#fff"/>
+
+          <!-- левая рука (машет, нарисована на ткани) -->
+          <g class="towel-wave">
+            <path d="M70 196 Q96 214 108 244" stroke="#4b438f" stroke-width="12" fill="none" stroke-linecap="round" opacity=".55"/>
+            <path d="M70 196 Q96 214 108 244" stroke="#fff" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+            <path d="M108 244 l-14 4 M108 244 l-10 12 M108 244 l2 14 M108 244 l12 8 M108 244 l14 -2" stroke="#4b438f" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+            <path d="M108 244 l-14 4 M108 244 l-10 12 M108 244 l2 14 M108 244 l12 8 M108 244 l14 -2" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="108" cy="244" r="8" fill="#fff"/>
+          </g>
+
+          <!-- правая рука с косячком -->
+          <path d="M252 196 Q226 212 214 240" stroke="#4b438f" stroke-width="12" fill="none" stroke-linecap="round" opacity=".55"/>
+          <path d="M252 196 Q226 212 214 240" stroke="#fff" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+          <g transform="translate(220 238) rotate(-28)">
+            <path d="M0 -4 L52 -6 L52 6 L0 4 Z" fill="#fffaf0" stroke="#2b1a12" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M10 -4 l0 8 M22 -4.5 l0 9 M34 -5 l0 10" stroke="#e6dccb" stroke-width="1.5"/>
+            <rect x="48" y="-6" width="6" height="12" rx="2" fill="#4a4a4a"/>
+            <circle cx="55" cy="0" r="6" fill="url(#emberGrad)" class="ember"/>
+          </g>
+          <path d="M214 240 l-14 -4 M214 240 l-12 10 M214 240 l-2 14 M214 240 l12 8" stroke="#4b438f" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+          <path d="M214 240 l-14 -4 M214 240 l-12 10 M214 240 l-2 14 M214 240 l12 8" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="214" cy="240" r="8" fill="#fff"/>
+
+          <!-- дымок -->
+          <g class="wisps" fill="none" stroke-linecap="round">
+            <path class="wisp w1" d="M270 210 q-12 -16 0 -32 q12 -16 0 -32 q-12 -16 0 -32"/>
+            <path class="wisp w2" d="M270 210 q12 -16 0 -32 q-12 -16 0 -32 q12 -16 0 -32"/>
+            <path class="wisp w3" d="M270 210 q-8 -14 4 -28 q10 -14 -2 -28 q-10 -14 2 -28"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="smoke-cloud" id="smokeCloud">
+      <div class="cloud-body">
+        <p class="cl l1">Герман написал этот сайт, чтобы поздравить Лену. Поздравляю!! 🎉</p>
+        <p class="cl l2">…ааа кто такой Герман? 🤔</p>
+        <p class="cl l3">Не забывайте использовать полотенце 🛁</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ГНОМЫ ============ -->
+<section class="reveal" id="gnomes">
+  <h2 class="section-title">Секретный бизнес-план<br><span class="hl">трусовых гномов</span> 🩲</h2>
+  <p class="section-sub">утёк в сеть. жми, чтобы раскрыть</p>
+  <div class="gnome-plan">
+    <div class="phase" data-secret="Включая твои. Проверь ящик 👀">
+      <span class="num">ФАЗА 1</span>
+      <span class="big">🩲</span>
+      <div class="txt">Собрать трусы</div>
+      <div class="secret"></div>
+    </div>
+    <div class="phase" data-secret="Поздравить Лену с праздником! 🎉">
+      <span class="num">ФАЗА 2</span>
+      <span class="big">❓</span>
+      <div class="txt">???</div>
+      <div class="secret"></div>
+    </div>
+    <div class="phase" data-secret="Лена улыбается — это бесценно 💛">
+      <span class="num">ФАЗА 3</span>
+      <span class="big">💰</span>
+      <div class="txt">Фиксируем прибыль</div>
+      <div class="secret"></div>
+    </div>
+  </div>
+  <div class="gnome-row">
+    <div class="counter-box">Гномы стащили трусов<b id="stolenCount">0</b></div>
+    <button class="btn" id="checkPants">🩲 ПРОВЕРИТЬ СВОИ ТРУСЫ</button>
+    <div class="counter-box" style="box-shadow:6px 6px 0 var(--mint)">Ты спасла трусов<b id="savedCount">0</b></div>
+  </div>
+  <p id="pantsMsg"></p>
+</section>
+
+<div class="ticker"><div class="ticker-track" id="ticker3"></div></div>
+
+<!-- ============ ПОЖЕЛАНИЯ ============ -->
+<section class="reveal">
+  <h2 class="section-title">Открой <span class="hl">пожелания</span></h2>
+  <p class="section-sub">жми на карточки — внутри кое-что для тебя</p>
+  <div class="wishes" id="wishes"></div>
+</section>
+
+<!-- ============ КОНСТРУКТОР ИГРУШКИ ============ -->
+<section class="reveal">
+  <h2 class="section-title">Сшей <span class="hl">мишку</span></h2>
+  <p class="section-sub">почти как в жизни, только без иголок 🪡</p>
+  <div class="toy-maker">
+    <div class="toy-stage">
+      <svg id="toy" viewBox="0 0 200 200">
+        <g id="toyBody">
+          <circle cx="58" cy="48" r="22" class="fur"/>
+          <circle cx="142" cy="48" r="22" class="fur"/>
+          <circle cx="58" cy="48" r="11" fill="#fff" opacity=".45"/>
+          <circle cx="142" cy="48" r="11" fill="#fff" opacity=".45"/>
+          <ellipse cx="100" cy="150" rx="55" ry="45" class="fur"/>
+          <ellipse cx="100" cy="155" rx="30" ry="26" fill="#fff" opacity=".4"/>
+          <circle cx="100" cy="88" r="52" class="fur"/>
+          <path d="M60 88 Q100 82 140 88" stroke="#2b1a12" stroke-width="1.5" stroke-dasharray="4 4" fill="none" opacity=".5"/>
+          <ellipse cx="100" cy="104" rx="20" ry="15" fill="#fff" opacity=".55"/>
+          <ellipse cx="100" cy="98" rx="7" ry="5" fill="#2b1a12"/>
+          <path d="M92 110 Q100 116 108 110" stroke="#2b1a12" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="72" cy="104" rx="9" ry="5" fill="#ff6f91" opacity=".6"/>
+          <ellipse cx="128" cy="104" rx="9" ry="5" fill="#ff6f91" opacity=".6"/>
+        </g>
+        <g id="eyes"></g>
+        <g id="accessory"></g>
+      </svg>
+    </div>
+    <div class="controls">
+      <h3>ЦВЕТ ТКАНИ</h3>
+      <div class="swatches" id="colors"></div>
+      <h3>ГЛАЗКИ</h3>
+      <div class="swatches" id="eyeOpts"></div>
+      <h3>АКСЕССУАР</h3>
+      <div class="swatches" id="accOpts"></div>
+      <div id="toyName"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ИГРА ============ -->
+<section class="reveal" id="gameSection">
+  <h2 class="section-title">Мини-игра:<br><span class="hl">«Швейная корзинка»</span></h2>
+  <p class="section-sub">помоги Картману собрать всё для шитья. и береги трусы от гномов!</p>
+  <div class="game-wrap">
+    <div class="hud">
+      <span>⭐ Очки: <b id="score">0</b></span>
+      <span>❤️ Жизни: <b id="lives">3</b></span>
+      <span>⏱ Время: <b id="time">45</b></span>
+      <span>🏆 Рекорд: <b id="best">0</b></span>
+    </div>
+    <div class="legend">🧶 +1 · 🔘 +1 · 🧸 +3 · 🩲 +2 · 🍰 +5 · ✂️ = минус жизнь<br>
+      🧙 Гном внизу ворует трусы и очки — <u>кликни/тапни по нему</u>, чтобы прогнать (+3)!<br>
+      Управление: мышка, палец или стрелки ← →</div>
+    <canvas id="game" width="720" height="440"></canvas>
+    <div class="game-msg" id="gameMsg"></div>
+    <button class="btn pink" id="startBtn" style="margin-top:14px">▶ ИГРАТЬ</button>
+  </div>
+</section>
+
+<!-- ============ ПОДАРОК ============ -->
+<section class="reveal gift-area">
+  <h2 class="section-title">И <span class="hl">напоследок</span>…</h2>
+  <p class="section-sub">подарочек. гномы до него не добрались. наверное</p>
+  <div class="gift" id="gift">
+    <div class="lid"></div>
+    <div class="bow">🎀</div>
+    <div class="ribbon-v"></div>
+    <div class="box"></div>
+  </div>
+  <div class="letter-card" id="letter">
+    Лена, с праздником! 🌸<br><br>
+    Знакомы с тобой совсем немножко, но оч рад, по общению в интернетике уже чувствую что ты очень хорошая вайбовая девушка,
+    Пусть жизнь складывается так же ровно, как идеальный шов, а каждый день будет тёплым и уютным, как самая мягкая игрушка.
+    Желаю вдохновения, креативных и безумных идей, бесконечных запасов всего.
+    Пусть рядом будут люди, которые ценят тебя и твои золотые руки ✨<br><br>
+    С праздником! 
+    ГЕРА:<br>
+    <span class="ps">P.S. Если пропали трусы — ты знаешь, кто виноват 🧙‍♂️</span>
+  </div>
+</section>
+
+<footer>сшито с любовью специально для Лены · ни одни трусы не пострадали*<br><small>*это не точно</small></footer>
+
+<!-- гном-воришка на странице -->
+<div id="thief" title="Лови гнома!"><div class="bodywrap"><svg viewBox="0 0 80 110" class="gnome-svg"></svg></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ---------- гном (общий SVG) ----------
+const gnomeSVG = `
+  <path d="M40 2 L18 44 L62 44 Z" fill="#e3342f" stroke="#2b1a12" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="40" cy="46" rx="24" ry="6" fill="#e3342f" stroke="#2b1a12" stroke-width="2.5"/>
+  <ellipse cx="40" cy="58" rx="16" ry="13" fill="#fcd9b6" stroke="#2b1a12" stroke-width="2"/>
+  <circle cx="34" cy="55" r="2.5" fill="#2b1a12"/><circle cx="46" cy="55" r="2.5" fill="#2b1a12"/>
+  <circle cx="40" cy="61" r="4" fill="#f4a08a" stroke="#2b1a12" stroke-width="1.5"/>
+  <path d="M24 62 Q26 92 40 96 Q54 92 56 62 Q48 70 40 68 Q32 70 24 62 Z" fill="#fff" stroke="#2b1a12" stroke-width="2"/>
+  <rect x="26" y="80" width="28" height="18" rx="6" fill="#3a6fb0" stroke="#2b1a12" stroke-width="2"/>
+  <rect x="28" y="98" width="10" height="8" rx="3" fill="#2b1a12"/><rect x="42" y="98" width="10" height="8" rx="3" fill="#2b1a12"/>
+  <g transform="translate(56 66) rotate(18)">
+    <path d="M0 0 L22 0 L20 8 Q16 14 11 10 Q6 14 2 8 Z" fill="#ff6f91" stroke="#2b1a12" stroke-width="2"/>
+    <circle cx="6" cy="4" r="1.4" fill="#fff"/><circle cx="15" cy="4" r="1.4" fill="#fff"/>
+  </g>
+  <circle cx="58" cy="76" r="5" fill="#fcd9b6" stroke="#2b1a12" stroke-width="2"/>`;
+document.querySelectorAll('.gnome-svg').forEach(s => s.innerHTML = gnomeSVG);
+
+// ---------- бегущие строки ----------
+const tickerText = '★ ЛЕНА ★ С ПРАЗДНИКОМ ★ НАШ ОГОНЁК ВЕЧЕН 🔥 ★ ГНОМЫ, ВЕРНИТЕ ТРУСЫ ★ ОНИ УБИЛИ КЕННИ ★ НЕ ЗАБЫВАЙ ПОЛОТЕНЦЕ ★ ШЕЙ, ТВОРИ, ОТЖИГАЙ ';
+['ticker1', 'ticker2', 'ticker3'].forEach(id => {
+  document.getElementById(id).textContent = tickerText.repeat(6);
+});
+
+// ---------- плавающие штучки ----------
+const floatEmojis = ['🧸', '🧸', '🧸', '🧶', '🔘', '🩲', '✨', '🪡', '💖'];
+const floaters = document.getElementById('floaters');
+function spawnFloater() {
+  const el = document.createElement('div');
+  el.className = 'floater';
+  el.textContent = floatEmojis[Math.floor(Math.random() * floatEmojis.length)];
+  el.style.left = Math.random() * 100 + 'vw';
+  el.style.fontSize = 20 + Math.random() * 26 + 'px';
+  el.style.animationDuration = 12 + Math.random() * 10 + 's';
+  floaters.appendChild(el);
+  setTimeout(() => el.remove(), 23000);
+}
+setInterval(spawnFloater, 1200);
+for (let i = 0; i < 6; i++) setTimeout(spawnFloater, i * 300);
+
+// ---------- конфетти ----------
+const confColors = ['#ff6f91', '#ffc93c', '#8fd6b4', '#8ecae6', '#ff9a3c', '#c9a7f0'];
+function confetti(n = 120) {
+  for (let i = 0; i < n; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = confColors[i % confColors.length];
+    c.style.animationDuration = 2.5 + Math.random() * 2.5 + 's';
+    c.style.animationDelay = Math.random() * .6 + 's';
+    if (Math.random() > .5) c.style.borderRadius = '50%';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 6000);
+  }
+}
+document.getElementById('confettiBtn').addEventListener('click', () => confetti());
+window.addEventListener('load', () => setTimeout(() => confetti(80), 400));
+
+// ---------- тост ----------
+const toastEl = document.getElementById('toast');
+function toast(text) {
+  toastEl.innerHTML = text;
+  toastEl.classList.add('show');
+  clearTimeout(toastEl._t);
+  toastEl._t = setTimeout(() => toastEl.classList.remove('show'), 2600);
+}
+
+// ---------- появление блоков при скролле ----------
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ---------- снег в сцене ----------
+const scene = document.getElementById('scene');
+for (let i = 0; i < 26; i++) {
+  const s = document.createElement('div');
+  s.className = 'snow';
+  s.textContent = '❄';
+  s.style.left = Math.random() * 100 + '%';
+  s.style.animationDuration = 5 + Math.random() * 6 + 's';
+  s.style.animationDelay = -Math.random() * 10 + 's';
+  scene.appendChild(s);
+}
+
+// ---------- реплики персонажей ----------
+const phrases = {
+  cartman: [
+    'Лена, с праздником! Только торт чур мой! 🍰',
+    'Уважай мой авторитет… и сшей мне такую же игрушку!',
+    'Я не толстый, я просто праздничный! 🎉',
+    'Эй! Кто-то стащил мои трусы! Это опять гномы?!',
+    'Лена, ты крутая. Почти как я. 😎'
+  ],
+  kenny: [
+    'Мммф-мфф-мммф! <br>(С праздником!)',
+    'Ммф мммфф! <br>(Ты лучшая!)',
+    'Мфф-ммф мфф! <br>(Гном спёр мои трусы!)',
+    'Ммммф! 💛 <br>(Обнимашки!)'
+  ],
+  sceneGnome: [
+    'Фаза 1: трусы. Фаза 2: ???',
+    'Ничего не видел, ничего не брал 🩲',
+    'С праздником, Лена! Трусы не отдам.',
+    'Хо-хо, хей-хей, трусы собираем 🎶'
+  ]
+};
+function talk(who) {
+  const bubble = document.getElementById(who + 'Bubble');
+  const list = phrases[who];
+  bubble.innerHTML = list[Math.floor(Math.random() * list.length)];
+  bubble.classList.add('show');
+  scene.classList.add('paused');
+  clearTimeout(bubble._t);
+  bubble._t = setTimeout(() => {
+    bubble.classList.remove('show');
+    if (!document.querySelector('.scene .bubble.show')) scene.classList.remove('paused');
+  }, 2600);
+}
+['cartman', 'kenny', 'sceneGnome'].forEach(id =>
+  document.getElementById(id).addEventListener('click', () => talk(id)));
+
+// ---------- Полотенчик ----------
+const towelie = document.getElementById('towelie');
+const smokeCloud = document.getElementById('smokeCloud');
+let towelTimers = [];
+function puffSmoke() {
+  const r = towelie.querySelector('.ember').getBoundingClientRect();
+  for (let i = 0; i < 9; i++) {
+    const p = document.createElement('div');
+    p.className = 'puff';
+    const size = 26 + Math.random() * 30;
+    p.style.width = p.style.height = size + 'px';
+    p.style.left = r.left + r.width / 2 - size / 2 + 'px';
+    p.style.top = r.top + r.height / 2 - size / 2 + 'px';
+    p.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+    p.style.animationDelay = i * 0.09 + 's';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 3400);
+  }
+}
+towelie.addEventListener('click', () => {
+  puffSmoke();
+  towelTimers.forEach(clearTimeout);
+  const lines = smokeCloud.querySelectorAll('.cl');
+  lines.forEach(l => l.classList.remove('on'));
+  smokeCloud.classList.remove('show');
+  void smokeCloud.offsetWidth;
+  smokeCloud.classList.add('show');
+  towelie.classList.add('towelie-high');
+  // реплики с «задумчивыми» паузами
+  [300, 2300, 4300].forEach((ms, i) => towelTimers.push(setTimeout(() => lines[i].classList.add('on'), ms)));
+  towelTimers.push(setTimeout(() => towelie.classList.remove('towelie-high'), 6000));
+});
+
+// ---------- бизнес-план гномов ----------
+document.querySelectorAll('.phase').forEach(p => {
+  p.addEventListener('click', () => {
+    p.querySelector('.secret').textContent = p.dataset.secret;
+    p.classList.remove('shake'); void p.offsetWidth; p.classList.add('shake');
+    if (p.querySelector('.txt').textContent === '???') {
+      p.querySelector('.txt').textContent = 'ВОТ ОНО!';
+      p.querySelector('.big').textContent = '🎉';
+      confetti(60);
+    }
+  });
+});
+
+let stolen = 0, saved = 0;
+const stolenEl = document.getElementById('stolenCount');
+const savedEl = document.getElementById('savedCount');
+const pantsMsgs = [
+  '😱 Пропали! На месте преступления найден красный колпачок…',
+  '🧙 Гном уже бежит внизу экрана — лови его!',
+  '🩲 Трусы на месте. Пока что. Гномы не дремлют.',
+  '🕵️ Улики указывают на подземную трусовую корпорацию.',
+  '😎 Трусы целы! Ты непобедима.'
+];
+document.getElementById('checkPants').addEventListener('click', function () {
+  this.classList.remove('shake'); void this.offsetWidth; this.classList.add('shake');
+  const i = Math.floor(Math.random() * pantsMsgs.length);
+  document.getElementById('pantsMsg').textContent = pantsMsgs[i];
+  if (i < 2) { stolen++; stolenEl.textContent = stolen; runThief(); }
+});
+
+// ---------- гном-воришка, бегающий по странице ----------
+const thief = document.getElementById('thief');
+let thiefRunning = false;
+function runThief() {
+  if (thiefRunning) return;
+  thiefRunning = true;
+  thief.classList.remove('caught');
+  thief.classList.add('run');
+}
+thief.addEventListener('animationend', e => {
+  if (e.animationName === 'thiefRun') {
+    stolen++; stolenEl.textContent = stolen;
+    toast('🧙 Гном утащил ещё одни трусы! Следующего лови!');
+  }
+  thief.classList.remove('run', 'caught');
+  thiefRunning = false;
+});
+thief.addEventListener('click', () => {
+  if (thief.classList.contains('caught')) return;
+  thief.classList.add('caught');
+  saved++; savedEl.textContent = saved;
+  toast(['Поймала! Трусы спасены 🩲✨', 'Гном повержен! Фаза 2 провалена 😎', 'Хо-хо, не в этот раз, гном!'][saved % 3]);
+});
+setTimeout(runThief, 9000);
+setInterval(runThief, 25000);
+
+// ---------- открытки ----------
+const wishes = [
+  ['🌷', 'Счастья — огромного и мягкого, как плюшевый мишка'],
+  ['🧵', 'Вдохновения, чтобы каждая новая игрушка была круче прежней'],
+  ['☀️', 'Тёплых дней и уютных вечеров с чаем и любимыми сериалами'],
+  ['😂', 'Смеха до слёз — как на лучших сериях Южного парка'],
+  ['💛', 'Добрых людей рядом, которые ценят тебя такой, какая ты есть'],
+  ['🩲', 'И чтобы ни один гном никогда не добрался до твоих трусов']
+];
+const wishesEl = document.getElementById('wishes');
+wishes.forEach(([emoji, text]) => {
+  const f = document.createElement('div');
+  f.className = 'flip';
+  f.innerHTML = `<div class="flip-inner">
+      <div class="face front">${emoji}<small>ЖМИ</small></div>
+      <div class="face back">${text}</div>
+    </div>`;
+  f.addEventListener('click', () => f.classList.toggle('open'));
+  wishesEl.appendChild(f);
+});
+
+// ---------- конструктор мишки ----------
+const furColors = ['#d9a777', '#ff8fab', '#8fd6b4', '#8ecae6', '#ffc93c', '#c9a7f0', '#fdfdfd'];
+const names = ['Пуговка', 'Плюшик', 'Ниточка', 'Зефирка', 'Кексик', 'Лоскутик', 'Тедди', 'Булочка', 'Карамелька', 'Бандит', 'Гроза Гномов'];
+const toy = { color: furColors[0], eyes: 'buttons', acc: 'bow' };
+
+const eyesSvg = {
+  buttons: `<circle cx="80" cy="80" r="9" fill="#2b1a12"/><circle cx="120" cy="80" r="9" fill="#2b1a12"/>
+            <circle cx="77" cy="77" r="1.6" fill="#fff"/><circle cx="83" cy="83" r="1.6" fill="#fff"/>
+            <circle cx="117" cy="77" r="1.6" fill="#fff"/><circle cx="123" cy="83" r="1.6" fill="#fff"/>`,
+  happy: `<path d="M72 82 Q80 72 88 82" stroke="#2b1a12" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <path d="M112 82 Q120 72 128 82" stroke="#2b1a12" stroke-width="3.5" fill="none" stroke-linecap="round"/>`,
+  cross: `<path d="M74 74 L86 86 M86 74 L74 86" stroke="#2b1a12" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M114 74 L126 86 M126 74 L114 86" stroke="#2b1a12" stroke-width="3.5" stroke-linecap="round"/>`,
+  cool: `<path d="M64 74 H136 V80 Q132 94 118 92 Q106 90 104 80 H96 Q94 90 82 92 Q68 94 64 80 Z" fill="#2b1a12"/>
+         <path d="M70 78 L78 78" stroke="#fff" stroke-width="2" stroke-linecap="round"/>`
+};
+const accSvg = {
+  bow: `<path d="M100 36 L80 24 L80 48 Z M100 36 L120 24 L120 48 Z" fill="#ff6f91" stroke="#2b1a12" stroke-width="2"/><circle cx="100" cy="36" r="6" fill="#e0557a" stroke="#2b1a12" stroke-width="2"/>`,
+  hat: `<path d="M62 52 Q64 18 100 18 Q136 18 138 52 Z" fill="#3fb6c5" stroke="#2b1a12" stroke-width="2"/><rect x="58" y="46" width="84" height="10" rx="5" fill="#f2c94c" stroke="#2b1a12" stroke-width="2"/><circle cx="100" cy="18" r="8" fill="#f2c94c" stroke="#2b1a12" stroke-width="2"/>`,
+  gnome: `<path d="M100 -6 L72 50 L128 50 Z" fill="#e3342f" stroke="#2b1a12" stroke-width="2.5" stroke-linejoin="round"/>`,
+  pants: `<g transform="translate(70 128)"><path d="M0 0 L60 0 L55 22 Q44 38 30 26 Q16 38 5 22 Z" fill="#ff6f91" stroke="#2b1a12" stroke-width="2.5"/><circle cx="14" cy="10" r="3" fill="#fff"/><circle cx="30" cy="12" r="3" fill="#fff"/><circle cx="46" cy="10" r="3" fill="#fff"/></g>`,
+  none: ''
+};
+
+function renderToy() {
+  document.querySelectorAll('#toy .fur').forEach(el => { el.setAttribute('fill', toy.color); el.setAttribute('stroke', '#2b1a12'); el.setAttribute('stroke-width', '2.5'); });
+  document.getElementById('eyes').innerHTML = eyesSvg[toy.eyes];
+  document.getElementById('accessory').innerHTML = accSvg[toy.acc];
+}
+function setName() {
+  document.getElementById('toyName').textContent = 'Знакомься: ' + names[Math.floor(Math.random() * names.length)] + '!';
+}
+const colorsEl = document.getElementById('colors');
+furColors.forEach(c => {
+  const s = document.createElement('div');
+  s.className = 'swatch';
+  s.style.background = c;
+  s.onclick = () => { toy.color = c; renderToy(); setName(); };
+  colorsEl.appendChild(s);
+});
+function optionGroup(containerId, opts, key) {
+  const el = document.getElementById(containerId);
+  opts.forEach(([val, label]) => {
+    const b = document.createElement('button');
+    b.className = 'opt' + (toy[key] === val ? ' active' : '');
+    b.textContent = label;
+    b.onclick = () => {
+      toy[key] = val;
+      el.querySelectorAll('.opt').forEach(o => o.classList.remove('active'));
+      b.classList.add('active');
+      renderToy(); setName();
+    };
+    el.appendChild(b);
+  });
+}
+optionGroup('eyeOpts', [['buttons', '🔘 пуговки'], ['happy', '😊 радостные'], ['cross', '✖ крестики'], ['cool', '😎 очки']], 'eyes');
+optionGroup('accOpts', [['bow', '🎀 бантик'], ['hat', '🧢 шапка Картмана'], ['gnome', '🧙 колпак гнома'], ['pants', '🩲 трусы'], ['none', 'без']], 'acc');
+renderToy(); setName();
+
+// ---------- мини-игра ----------
+const canvas = document.getElementById('game');
+const ctx = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+const ITEMS = [
+  { e: '🧶', pts: 1, w: 28 },
+  { e: '🔘', pts: 1, w: 28 },
+  { e: '🧸', pts: 3, w: 12 },
+  { e: '🩲', pts: 2, w: 14 },
+  { e: '🍰', pts: 5, w: 5 },
+  { e: '✂️', pts: -1, w: 20 }
+];
+const totalW = ITEMS.reduce((s, i) => s + i.w, 0);
+let state, best = 0, keys = {};
+try { best = +localStorage.getItem('lenaBest') || 0; } catch (e) {}
+document.getElementById('best').textContent = best;
+
+function newState() {
+  return { x: W / 2, items: [], pops: [], score: 0, lives: 3, time: 45, running: false, spawnT: 0, last: 0, happy: 0, hurt: 0, gnome: null, gnomeT: 6 };
+}
+state = newState();
+
+function pickItem() {
+  let r = Math.random() * totalW;
+  for (const it of ITEMS) { if ((r -= it.w) < 0) return it; }
+  return ITEMS[0];
+}
+
+function drawCartman(x, y, mood) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.lineWidth = 2.5; ctx.strokeStyle = '#2b1a12';
+  // корзинка
+  ctx.fillStyle = '#c98b52';
+  ctx.beginPath(); ctx.moveTo(-48, -88); ctx.lineTo(48, -88); ctx.lineTo(38, -60); ctx.lineTo(-38, -60); ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.strokeStyle = '#8a5a2e'; ctx.lineWidth = 2;
+  for (let i = -36; i <= 36; i += 12) { ctx.beginPath(); ctx.moveTo(i, -88); ctx.lineTo(i * .8, -60); ctx.stroke(); }
+  ctx.strokeStyle = '#2b1a12'; ctx.lineWidth = 2.5;
+  // тело
+  ctx.fillStyle = '#e3342f';
+  ctx.beginPath(); ctx.ellipse(0, -18, 50, 26, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  // руки
+  ctx.beginPath(); ctx.ellipse(-44, -48, 8, 18, -.3, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.ellipse(44, -48, 8, 18, .3, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = '#f2c94c';
+  ctx.beginPath(); ctx.arc(-40, -64, 7, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.arc(40, -64, 7, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  // голова
+  ctx.fillStyle = '#fcd9b6';
+  ctx.beginPath(); ctx.ellipse(0, -44, 36, 28, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  // шапка
+  ctx.fillStyle = '#3fb6c5';
+  ctx.beginPath(); ctx.moveTo(-36, -50); ctx.quadraticCurveTo(-34, -80, 0, -80); ctx.quadraticCurveTo(34, -80, 36, -50); ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = '#f2c94c';
+  ctx.fillRect(-37, -56, 74, 9); ctx.strokeRect(-37, -56, 74, 9);
+  // глаза
+  ctx.fillStyle = '#fff'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.ellipse(-8, -38, 7, 8, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.ellipse(8, -38, 7, 8, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = '#000'; ctx.lineWidth = 2;
+  if (mood === 'hurt') {
+    [[-8, -38], [8, -38]].forEach(([ex, ey]) => {
+      ctx.beginPath(); ctx.moveTo(ex - 3, ey - 3); ctx.lineTo(ex + 3, ey + 3); ctx.moveTo(ex + 3, ey - 3); ctx.lineTo(ex - 3, ey + 3); ctx.stroke();
+    });
+  } else {
+    ctx.beginPath(); ctx.arc(-6, -37, 2, 0, Math.PI * 2); ctx.arc(6, -37, 2, 0, Math.PI * 2); ctx.fill();
+  }
+  // рот
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  if (mood === 'happy') ctx.arc(0, -28, 8, 0.1 * Math.PI, 0.9 * Math.PI);
+  else if (mood === 'hurt') { ctx.moveTo(-7, -24); ctx.quadraticCurveTo(0, -31, 7, -24); }
+  else { ctx.moveTo(-7, -27); ctx.quadraticCurveTo(0, -23, 7, -27); }
+  ctx.stroke();
+  // ноги
+  ctx.fillStyle = '#7a4a2a';
+  ctx.fillRect(-26, 4, 18, 8); ctx.fillRect(8, 4, 18, 8);
+  ctx.restore();
+}
+
+function drawGnome(g) {
+  ctx.save();
+  ctx.translate(g.x, H - 12);
+  if (g.dir < 0) ctx.scale(-1, 1);
+  const bob = Math.sin(g.x / 6) * 2;
+  ctx.translate(0, bob);
+  ctx.strokeStyle = '#2b1a12'; ctx.lineWidth = 2;
+  // ноги
+  ctx.fillStyle = '#2b1a12'; ctx.fillRect(-10, -8, 8, 8); ctx.fillRect(3, -8, 8, 8);
+  // тело
+  ctx.fillStyle = '#3a6fb0'; ctx.beginPath(); ctx.roundRect(-12, -24, 24, 18, 5); ctx.fill(); ctx.stroke();
+  // борода
+  ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.moveTo(-13, -40); ctx.quadraticCurveTo(-12, -14, 0, -12); ctx.quadraticCurveTo(12, -14, 13, -40); ctx.closePath(); ctx.fill(); ctx.stroke();
+  // лицо
+  ctx.fillStyle = '#fcd9b6'; ctx.beginPath(); ctx.ellipse(0, -42, 12, 9, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = '#2b1a12'; ctx.beginPath(); ctx.arc(-4, -43, 1.8, 0, Math.PI * 2); ctx.arc(5, -43, 1.8, 0, Math.PI * 2); ctx.fill();
+  // колпак
+  ctx.fillStyle = '#e3342f'; ctx.beginPath(); ctx.moveTo(-15, -48); ctx.lineTo(0, -82); ctx.lineTo(15, -48); ctx.closePath(); ctx.fill(); ctx.stroke();
+  // трусы в руке
+  if (g.loot) {
+    ctx.font = '22px serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('🩲', 18, -26);
+  }
+  ctx.restore();
+}
+
+function drawBackground() {
+  const sky = ctx.createLinearGradient(0, 0, 0, H);
+  sky.addColorStop(0, '#8ecae6'); sky.addColorStop(1, '#fff3e2');
+  ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H);
+  const peaks = [[120, 180], [360, 230], [620, 170]];
+  ctx.strokeStyle = '#2b1a12'; ctx.lineWidth = 2.5;
+  ctx.fillStyle = '#7f9fb3';
+  peaks.forEach(([mx, mh]) => {
+    ctx.beginPath(); ctx.moveTo(mx - 170, H - 60); ctx.lineTo(mx, H - 60 - mh); ctx.lineTo(mx + 170, H - 60); ctx.fill(); ctx.stroke();
+  });
+  ctx.fillStyle = '#fff';
+  peaks.forEach(([mx, mh]) => {
+    ctx.beginPath(); ctx.moveTo(mx - 45, H - 60 - mh + 48); ctx.lineTo(mx, H - 60 - mh); ctx.lineTo(mx + 45, H - 60 - mh + 48); ctx.fill();
+  });
+  ctx.fillStyle = '#fbfbfd';
+  ctx.fillRect(0, H - 60, W, 60);
+  ctx.beginPath(); ctx.moveTo(0, H - 60); ctx.lineTo(W, H - 60); ctx.stroke();
+}
+
+function drawFrame() {
+  drawBackground();
+  ctx.font = '34px serif';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  state.items.forEach(it => ctx.fillText(it.e, it.x, it.y));
+  const mood = state.hurt > 0 ? 'hurt' : state.happy > 0 ? 'happy' : 'normal';
+  drawCartman(state.x, H - 20, mood);
+  if (state.gnome) drawGnome(state.gnome);
+  ctx.font = 'bold 22px Comfortaa, sans-serif';
+  ctx.textAlign = 'center';
+  state.pops.forEach(p => {
+    ctx.globalAlpha = Math.max(0, p.life);
+    ctx.fillStyle = p.color;
+    ctx.fillText(p.text, p.x, p.y);
+  });
+  ctx.globalAlpha = 1;
+}
+
+function pop(text, x, y, color) { state.pops.push({ text, x, y, life: 1, color }); }
+
+function endGame() {
+  state.running = false;
+  const msg = document.getElementById('gameMsg');
+  if (state.score > best) {
+    best = state.score;
+    try { localStorage.setItem('lenaBest', best); } catch (e) {}
+    document.getElementById('best').textContent = best;
+    confetti(100);
+  }
+  if (state.lives <= 0) msg.textContent = `Ножницы победили! Счёт: ${state.score}. Картман требует реванша!`;
+  else if (state.score >= 45) msg.textContent = `ЛЕГЕНДА! ${state.score} очков — гномы в ужасе, золотые руки! 🏆`;
+  else if (state.score >= 25) msg.textContent = `Отлично! ${state.score} очков — корзинка полная, трусы в безопасности 🧺`;
+  else msg.textContent = `${state.score} очков. Картман говорит: «Слабовато!» 😏`;
+  const b = document.getElementById('startBtn');
+  b.textContent = '↻ ЕЩЁ РАЗ';
+  b.style.display = '';
+}
+
+function loop(t) {
+  if (!state.running) return;
+  const dt = Math.min(0.05, (t - state.last) / 1000 || 0);
+  state.last = t;
+
+  if (keys.ArrowLeft) state.x -= 480 * dt;
+  if (keys.ArrowRight) state.x += 480 * dt;
+  state.x = Math.max(50, Math.min(W - 50, state.x));
+
+  state.time -= dt;
+  const difficulty = 1 + (45 - state.time) / 30;
+  state.spawnT -= dt;
+  if (state.spawnT <= 0) {
+    const it = pickItem();
+    state.items.push({ ...it, x: 30 + Math.random() * (W - 60), y: -20, vy: (110 + Math.random() * 70) * difficulty });
+    state.spawnT = 0.75 / difficulty;
+  }
+
+  // гном-воришка
+  state.gnomeT -= dt;
+  if (!state.gnome && state.gnomeT <= 0) {
+    const dir = Math.random() < .5 ? 1 : -1;
+    state.gnome = { x: dir > 0 ? -30 : W + 30, dir, loot: false, speed: 130 + Math.random() * 60 };
+  }
+  if (state.gnome) {
+    const g = state.gnome;
+    g.x += g.dir * g.speed * dt;
+    if (!g.loot && Math.abs(g.x - state.x) < 30) {
+      g.loot = true;
+      const lost = Math.min(state.score, 3);
+      state.score -= lost; state.hurt = .6;
+      pop(lost ? `-${lost} 🩲 украли!` : 'трусы украли!', state.x, H - 140, '#c0392b');
+    }
+    if (g.x < -60 || g.x > W + 60) { state.gnome = null; state.gnomeT = 5 + Math.random() * 4; }
+  }
+
+  const basketY = H - 20 - 88;
+  state.items.forEach(it => {
+    it.y += it.vy * dt;
+    if (!it.done && it.y > basketY - 10 && it.y < basketY + 22 && Math.abs(it.x - state.x) < 52) {
+      it.done = true;
+      if (it.pts < 0) {
+        state.lives--; state.hurt = .6;
+        pop('Ай!', it.x, it.y, '#c0392b');
+      } else {
+        state.score += it.pts; state.happy = .4;
+        pop('+' + it.pts, it.x, it.y, '#ff6f91');
+      }
+    }
+  });
+  state.items = state.items.filter(it => !it.done && it.y < H + 30);
+  state.pops.forEach(p => { p.y -= 40 * dt; p.life -= dt * 1.4; });
+  state.pops = state.pops.filter(p => p.life > 0);
+  state.happy -= dt; state.hurt -= dt;
+
+  document.getElementById('score').textContent = state.score;
+  document.getElementById('lives').textContent = Math.max(0, state.lives);
+  document.getElementById('time').textContent = Math.max(0, Math.ceil(state.time));
+
+  drawFrame();
+  if (state.lives <= 0 || state.time <= 0) return endGame();
+  requestAnimationFrame(loop);
+}
+
+function startGame() {
+  state = newState();
+  state.running = true;
+  document.getElementById('gameMsg').textContent = '';
+  document.getElementById('startBtn').style.display = 'none';
+  requestAnimationFrame(t => { state.last = t; loop(t); });
+}
+document.getElementById('startBtn').addEventListener('click', startGame);
+
+function canvasX(clientX) {
+  const r = canvas.getBoundingClientRect();
+  return (clientX - r.left) * (W / r.width);
+}
+function canvasY(clientY) {
+  const r = canvas.getBoundingClientRect();
+  return (clientY - r.top) * (H / r.height);
+}
+// клик/тап по гному прогоняет его
+function tryShoo(clientX, clientY) {
+  const g = state.gnome;
+  if (!state.running || !g) return false;
+  const x = canvasX(clientX), y = canvasY(clientY);
+  if (Math.abs(x - g.x) < 34 && y > H - 100) {
+    pop(g.loot ? '+3 трусы вернули!' : '+3 кыш, гном!', g.x, H - 110, '#2e9e6b');
+    state.score += 3 + (g.loot ? 2 : 0);
+    state.gnome = null; state.gnomeT = 5 + Math.random() * 4;
+    return true;
+  }
+  return false;
+}
+canvas.addEventListener('mousemove', e => { state.x = canvasX(e.clientX); });
+canvas.addEventListener('mousedown', e => tryShoo(e.clientX, e.clientY));
+canvas.addEventListener('touchmove', e => { e.preventDefault(); state.x = canvasX(e.touches[0].clientX); }, { passive: false });
+canvas.addEventListener('touchstart', e => {
+  const t = e.touches[0];
+  if (!tryShoo(t.clientX, t.clientY)) state.x = canvasX(t.clientX);
+}, { passive: true });
+window.addEventListener('keydown', e => {
+  if (state.running && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) { keys[e.key] = true; e.preventDefault(); }
+});
+window.addEventListener('keyup', e => { keys[e.key] = false; });
+
+// стартовая картинка
+function drawIntro() {
+  drawFrame();
+  drawGnome({ x: 120, dir: 1, loot: true });
+  ctx.font = 'bold 26px Comfortaa, sans-serif';
+  ctx.fillStyle = '#2b1a12'; ctx.textAlign = 'center';
+  ctx.fillText('Нажми «ИГРАТЬ» 🧺', W / 2, H / 2 - 50);
+}
+drawIntro();
+document.fonts && document.fonts.ready.then(() => { if (!state.running) drawIntro(); });
+
+// ---------- подарок ----------
+document.getElementById('gift').addEventListener('click', function () {
+  if (this.classList.contains('opened')) return;
+  this.classList.add('opened');
+  confetti(150);
+  setTimeout(() => document.getElementById('letter').classList.add('show'), 500);
+});
+</script>
+</body>
+</html>
